@@ -12,7 +12,7 @@ andor_main::andor_main(QWidget *parent) :
 andor_main::~andor_main()
 {
     delete ui;
-    uint status1=CoolerOFF();
+
     uint status2=ShutDown();
 }
 
