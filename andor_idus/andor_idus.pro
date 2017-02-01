@@ -40,3 +40,12 @@ else:unix: LIBS += -L$$PWD/./ -latmcd64m
 
 INCLUDEPATH += $$PWD/.
 DEPENDPATH += $$PWD/.
+
+DISTFILES += \
+    atmcd32d.lib \
+    atmcd32m.lib \
+    atmcd64m.lib \
+    ATMCD32CS.dll \
+    atmcd32d.dll \
+    ATMCD64CS.dll \
+    atmcd64d.dll
