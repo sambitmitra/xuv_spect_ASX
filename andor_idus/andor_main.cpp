@@ -19,4 +19,5 @@ void andor_main::on_pushButton_clicked()
     long num;
     uint status=GetAvailableCameras(&num);
     ui->textBrowser->setText(QString::number(status));
+    ui->textBrowser_2->setText(QString::number(num));
 }

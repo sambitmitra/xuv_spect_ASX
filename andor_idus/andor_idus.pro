@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-02-01T16:18:30
+# Project created by QtCreator 2017-02-01T18:03:37
 #
 #-------------------------------------------------
 
@@ -27,11 +27,16 @@ SOURCES += main.cpp\
         andor_main.cpp
 
 HEADERS  += andor_main.h \
-    'C:/Program Files/Andor SOLIS/Drivers/ATMCD32D.H'
+    ATMCD32D.h
+
 
 FORMS    += andor_main.ui
 
-INCLUDEPATH += 'C:/Program Files/Andor SOLIS/Drivers'
-DEPENDPATH += 'C:/Program Files/Andor SOLIS/Drivers'
 
-LIBS +='C:/Program Files/Andor SOLIS/Drivers/atmcd64d.dll'
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/./ -latmcd64m
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/./ -latmcd64d
+else:unix: LIBS += -L$$PWD/./ -latmcd64m
+
+INCLUDEPATH += $$PWD/.
+DEPENDPATH += $$PWD/.
